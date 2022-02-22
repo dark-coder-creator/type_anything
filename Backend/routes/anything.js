@@ -4,7 +4,7 @@ var anythingSchema = require("../models/anythingSchema")
 
 var router = express.Router()
 router.use(bodyParser.json())
-router.get('/',(req,res) => {
+router.post('/',(req,res) => {
      console.log(anythingSchema)
      const { description , name } = req.body
 
@@ -19,6 +19,9 @@ router.get('/',(req,res) => {
      })
     res.status(200).json("The Result sent successfully")
 })
+
+
+
 
 router.get('/hello',(req,res) => {
     const username = req.body.username

@@ -1,12 +1,14 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
+app.use(cors())
 var anythingRouter = require('./routes/anything')
 
-const PORT = 3000||process.env.PORT;
+const PORT = 3004||process.env.PORT;
 
 app.get('/',(req,res) => {
-    console.log(res)
+    
 
    res.status(200).json('Hello Server')
 })
