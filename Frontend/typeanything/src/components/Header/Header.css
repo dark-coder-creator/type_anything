@@ -1,0 +1,10 @@
+.header {
+    padding: 10px 0;
+    text-align: center;
+    background:magenta;
+}
+
+.font-link {
+    font-family: 'IBM Plex Serif', serif;
+    color:white;
+}
