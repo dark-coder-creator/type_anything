@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-
+import { AnythingData } from '../AnythingData/AnythingData';
 import './Content.css'
 
 function Content() {
@@ -29,8 +29,12 @@ function Content() {
       }
       catch(err)
       {
-
+        console.log(err)
       }
+   }
+
+   function sayHello() {
+      alert("the anydata you have entered is successfully submitted")
    }
   return (
      <div className='content'> 
@@ -43,10 +47,11 @@ function Content() {
            
                <input type="text" name="Description" value={description} placeholder='type anything....' onChange={(e) => setDescription(e.target.value)}/>
           
-              <button type="submit">Create Anything</button>
-              <div className='message'>{message ? <p>{message}</p>:null}</div>
+              <button className='ButtonStyle' onClick={sayHello}   type="submit">Create Anything</button>
+              {/* <div className='message'>{message ? <p>{message}</p>:null}</div> */}
            
          </form>
+         <AnythingData />
      </div>
   )
 }

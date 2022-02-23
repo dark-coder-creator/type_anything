@@ -21,7 +21,19 @@ router.post('/',(req,res) => {
 })
 
 
-
+router.get('/data',(req,res) => {
+    anythingSchema.find({},function(err,result) {
+        if(err)
+        {
+            console.log(error)
+        }
+        else if(result)
+        {
+            res.status(200).send(result)
+        }
+    })
+    
+})
 
 router.get('/hello',(req,res) => {
     const username = req.body.username
