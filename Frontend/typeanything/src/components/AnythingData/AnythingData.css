@@ -1,6 +1,26 @@
-
-.anythingDataTop {
-    padding-top: 150px;
+/* 
+ .anythingDataTop {
+    padding-top: 100px;
     padding-left: 50px;
+
     padding-bottom: 100px;
+}  */
+
+.btn1{
+    margin-right: 50px;
+    border-radius: 12px;
+    background-color: blue;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    border:unset;
+}
+
+.btn2 {
+    border-radius: 12px;
+    background-color: red;
+    color:white;
+    border:unset;
+    font-size:20px;
+    font-weight: bold;
 }

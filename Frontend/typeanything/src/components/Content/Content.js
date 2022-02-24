@@ -1,11 +1,42 @@
 import React,{useState} from 'react'
 import { AnythingData } from '../AnythingData/AnythingData';
+import Alert from '@mui/material/Alert'
+import  AlertTitle from '@mui/material/AlertTitle'
+import Button from '@mui/material/Button' 
+import  Snackbar  from '@mui/material/Snackbar';
 import './Content.css'
 
 function Content() {
    const [name,setName] = useState("");
    const [description,setDescription] = useState("")
    const [message,setMessage] = useState("")
+   // const [open,setOpen] = useState(false)
+
+   // const handleClick = () => {
+   //    setOpen(true)
+   // };
+
+   // const handleClose = (event,reason) => {
+   //    if(reason === 'clickaway') {
+   //       return;
+   //    }
+   //    setOpen(false);                           
+   // }
+   const [state, setState] = React.useState({
+      open: false,
+      vertical:'top',
+      horizontal:'center',
+    });
+  
+    const { vertical, horizontal, open } = state;
+  
+    const handleClick = (newState) => () => {
+      setState({ open: true, ...newState });
+    };
+  
+    const handleClose = () => {
+      setState({ ...state, open: false });
+    };
    let handleSubmit = async(e) => {
       e.preventDefault();
       try {
@@ -34,7 +65,7 @@ function Content() {
    }
 
    function sayHello() {
-      alert("the anydata you have entered is successfully submitted")
+       alert('the datas are created')
    }
   return (
      <div className='content'> 
@@ -47,10 +78,19 @@ function Content() {
            
                <input type="text" name="Description" value={description} placeholder='type anything....' onChange={(e) => setDescription(e.target.value)}/>
           
-              <button className='ButtonStyle' onClick={sayHello}   type="submit">Create Anything</button>
+             <button className='ButtonStyle' onClick={handleClick({
+          vertical: 'top',
+          horizontal: 'right',
+        })}   type="submit">Create Anything</button> 
               {/* <div className='message'>{message ? <p>{message}</p>:null}</div> */}
            
+             <Snackbar   anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}  key={vertical + horizontal}>
+                 <Alert onClose={handleClose} severity="success" sx={{ width:'100%'}}>
+                    Quotes are entered Successfully
+                 </Alert>
+             </Snackbar>
          </form>
+         
          <AnythingData />
      </div>
   )

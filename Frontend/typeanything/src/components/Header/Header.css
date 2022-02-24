@@ -4,7 +4,9 @@
     background:magenta;
 }
 
-.font-link {
-    font-family: 'IBM Plex Serif', serif;
+  .font-link {
+    font-family: 'IBM Plex Serif', serif; 
+    font-family: sans-serif;
     color:white;
-}
+}  
+
