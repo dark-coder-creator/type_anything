@@ -35,6 +35,12 @@ router.get('/data',(req,res) => {
     
 })
 
+router.post('/like',(req,res) => {
+    
+})
+
+
+
 router.get('/hello',(req,res) => {
     const username = req.body.username
     res.status(200).json('Hello '+username)

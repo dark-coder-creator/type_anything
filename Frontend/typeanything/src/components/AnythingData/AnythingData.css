@@ -14,6 +14,7 @@
     font-size: 20px;
     font-weight: bold;
     border:unset;
+    cursor: pointer;
 }
 
 .btn2 {

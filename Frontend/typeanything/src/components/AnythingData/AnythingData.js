@@ -4,7 +4,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
+import Like from '../Like/Like'
 //card import start
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -13,9 +13,9 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 //card import finish
 
-
-
-
+const handleClick = () => {
+  console.log('hello')
+}
 export const AnythingData = () => {
   const [anythingData,setAnythingData] = useState([])
 
@@ -77,10 +77,12 @@ export const AnythingData = () => {
     <Grid item xs={2} sm={4} md={4}  key={index}>
       <h2 style={{color:"green"}}>"{data.description}"</h2>
       <h3>-{data.name}</h3>
-       <button className="btn1">Like</button>
-       <button className='btn2'>Unlike</button>
+       {/* <button onClick={handleClick()} className="btn1">Like</button> 
+       <button className='btn2'>Unlike</button> */}
+       <Like props={data} key={index}/>
     </Grid>
   ))}
+           
      </Grid>
 
      
