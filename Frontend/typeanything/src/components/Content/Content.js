@@ -10,6 +10,8 @@ function Content() {
    const [name,setName] = useState("");
    const [description,setDescription] = useState("")
    const [message,setMessage] = useState("")
+   const [count , setCount] = useState(0);
+   const [ like , setLike ] = useState(0)
    // const [open,setOpen] = useState(false)
 
    // const handleClick = () => {
@@ -45,13 +47,15 @@ function Content() {
            headers:{'Content-Type':'application/json'},
            body:JSON.stringify({
               name:name,
-              description:description
+              description:description,
+              like:like
            }),
         })
         console.log(res)
         if(res.status === 200) {
            setName("")
            setDescription("")
+           setCount(0)
            setMessage("Datas Created Successfully")
         }
         else {
@@ -67,6 +71,16 @@ function Content() {
    function sayHello() {
        alert('the datas are created')
    }
+
+   function onClick()
+   {
+      handleClick({
+         vertical: 'top',
+         horizontal: 'right',
+       });
+      setLike(0);
+   }
+
   return (
      <div className='content'> 
          <form onSubmit={handleSubmit}>
@@ -78,10 +92,10 @@ function Content() {
            
                <input type="text" name="Description" value={description} placeholder='type anything....' onChange={(e) => setDescription(e.target.value)}/>
           
-             <button className='ButtonStyle' onClick={handleClick({
-          vertical: 'top',
-          horizontal: 'right',
-        })}   type="submit">Create Anything</button> 
+             <button className='ButtonStyle' onClick={ onClick }   type="submit">Create Anything {like} </button> 
+
+       
+
               {/* <div className='message'>{message ? <p>{message}</p>:null}</div> */}
            
              <Snackbar   anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}  key={vertical + horizontal}>
