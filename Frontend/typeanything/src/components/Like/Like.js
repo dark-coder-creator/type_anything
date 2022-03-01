@@ -44,7 +44,7 @@ import React,{useState,useEffect} from 'react'
     <div >
       <form >
           <button onClick={ onClick } className="btn1">Like {like}</button>
-        
+           <button className="btn2">Unlike </button>
       </form>
       </div>
      
