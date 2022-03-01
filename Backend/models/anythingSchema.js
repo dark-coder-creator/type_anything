@@ -8,7 +8,8 @@ var Schema = mongoose.Schema;
 var anythingSchema = Schema({
     description:String,
     name:String,
-    like:Number
+    like:Number,
+    unlike:Number
 })
 
 

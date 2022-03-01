@@ -1,6 +1,6 @@
 
 import './Like.css'
-import React,{useState,useEffect} from 'react'
+import React from 'react'
 
 
 
@@ -8,6 +8,7 @@ import React,{useState,useEffect} from 'react'
  
   const id = props._id
   const like = props.like
+  const unlike = props.unlike
     function onClick() {
       setId({id,like});
       
@@ -35,16 +36,35 @@ import React,{useState,useEffect} from 'react'
             console.log(e)
           }
        }
+    
 
+      const setUnlike = async({id,unlike}) => {
+         try {
+            const res = await fetch('http://localhost:3004/anything/unlike/'+id,{
+              method:"POST",
+              headers:{'Content-Type':'application/json'},
+              body:JSON.stringify({
+                unlike:unlike+1
+              })
+            })
+            console.log(res)
+         }
+         catch(e)
+         {
+           console.log(e)
+         }
+
+      }
     
 
   //{/* <button onClick={handleClick(id)} className="btn1">Like</button> */}
   return (
 
     <div >
-      <form >
-          <button onClick={ onClick } className="btn1">Like {like}</button>
-           <button className="btn2">Unlike </button>
+      <form style={{border:"none"}}>
+          <button onClick={ onClick } className="btn1">{like} Likes</button>
+           <button onClick={() => setUnlike({id,unlike}) } className="btn2">{unlike} Unlikes </button>
+           
       </form>
       </div>
      

@@ -10,8 +10,9 @@ function Content() {
    const [name,setName] = useState("");
    const [description,setDescription] = useState("")
    const [message,setMessage] = useState("")
-   const [count , setCount] = useState(0);
+  // const [count , setCount] = useState(0);
    const [ like , setLike ] = useState(0)
+   const [ unlike , setUnlike ] = useState(0)
    // const [open,setOpen] = useState(false)
 
    // const handleClick = () => {
@@ -49,14 +50,15 @@ function Content() {
            body:JSON.stringify({
               name:name,
               description:description,
-              like:like
+              like:like,
+              unlike:unlike
            }),
         })
         console.log(res)
         if(res.status === 200) {
            setName("")
            setDescription("")
-           setCount(0)
+           //setCount(0)
            setMessage("Datas Created Successfully")
         }
         else {
@@ -80,11 +82,12 @@ function Content() {
          horizontal: 'right',
        });
       setLike(0);
+      setUnlike(0);
    }
 
   return (
      <div className='content'> 
-         <form onSubmit={handleSubmit}>
+         <form style={{border:"none"}} onSubmit={handleSubmit}>
       
          
                <input type="text" name="name" value={name} placeholder='name' onChange={(e) => setName(e.target.value) } />

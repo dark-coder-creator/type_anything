@@ -5,7 +5,7 @@ import './Header.css'
   return (
  <div className='header'>
     <div>
-        <h1 id="type-anything"   className='font-link'>Type Anything</h1>
+        <h1 id="type-anything"   className='font-link'>Type Anything.</h1>
       </div>
  </div>
     
