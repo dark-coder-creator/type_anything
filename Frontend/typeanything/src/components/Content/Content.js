@@ -24,15 +24,16 @@ function Content() {
    //    }
    //    setOpen(false);                           
    // }
-   const [state, setState] = React.useState({
+   const [state, setState] = useState({
       open: false,
       vertical:'top',
-      horizontal:'center',
+      horizontal:'right',
     });
   
     const { vertical, horizontal, open } = state;
   
-    const handleClick = (newState) => () => {
+    const handleClick = (newState)  => {
+     
       setState({ open: true, ...newState });
     };
   
@@ -92,7 +93,7 @@ function Content() {
            
                <input type="text" name="Description" value={description} placeholder='type anything....' onChange={(e) => setDescription(e.target.value)}/>
           
-             <button className='ButtonStyle' onClick={ onClick }   type="submit">Create Anything {like} </button> 
+             <button className='ButtonStyle' onClick={ onClick }   type="submit">Create Anything  </button> 
 
        
 
