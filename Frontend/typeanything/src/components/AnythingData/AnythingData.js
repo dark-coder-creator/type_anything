@@ -12,6 +12,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+
 //card import finish
 
 const handleClick = () => {
@@ -81,7 +82,8 @@ export const AnythingData = () => {
        {/* <button onClick={handleClick()} className="btn1">Like</button> 
        <button className='btn2'>Unlike</button> */}
        <Like props={data} key={index}/>
-       <Comment />
+       <Comment props={data} key={index}  />
+       
     </Grid>
   ))}
            
