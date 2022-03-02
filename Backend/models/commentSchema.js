@@ -6,7 +6,8 @@ var Schema = mongoose.Schema;
 
 var commentSchema = Schema({
     comment:String,
-    name:String
+    name:String,
+    anythingId:String
 })
 
 

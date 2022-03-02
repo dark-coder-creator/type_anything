@@ -7,9 +7,9 @@ var router = express.Router();
 router.use(bodyParser.json());
 
 router.post('/',(req,res) => {
-      const { name , comment } = req.body
+      const { name , comment , anythingId } = req.body
 
-      const Comments = new Comment({ name:name,comment:comment })
+      const Comments = new Comment({ name:name,comment:comment,anythingId:anythingId })
       Comments.save(function(err) {
           if(err)
           {
