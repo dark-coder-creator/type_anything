@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var commentSchema = Schema({
     comment:String,
     name:String,
-    anythingId:String
+    anythingId:mongoose.Types.ObjectId
 })
 
 
