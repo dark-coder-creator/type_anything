@@ -26,8 +26,8 @@ router.post('/',(req,res) => {
 //   as: 'string'
 // }
 
-router.get('/personalComments',(req,res) =>{
-
+router.get('/personalComments/:name',(req,res) =>{
+ const name = req.params.name
  Anything.aggregate(
      [{
         $lookup:{
@@ -36,6 +36,11 @@ router.get('/personalComments',(req,res) =>{
           foreignField:"anythingId",
           as:"personalComments"
         }
+     },{
+       $match:{
+         name:name
+       }
+        
      }]
  ,function(err,result) {
    if(err)
@@ -46,6 +51,11 @@ router.get('/personalComments',(req,res) =>{
    else 
    {
      console.log(result.length)
+     result.map((data,index) => {
+       console.log(data.personalComments)
+       
+     })
+
      res.status(200).json(result)
    }
  })

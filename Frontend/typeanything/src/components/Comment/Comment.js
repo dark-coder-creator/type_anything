@@ -74,7 +74,7 @@ const Comment = ({props}) => {
             <input type="text" name="comment" value={comment} placeholder='type comment...' onChange={(e) => setComment(e.target.value)} />
             <button  onClick={ onClick }  type="submit">post a comment</button>
            
-            <ViewComments />
+            <ViewComments data = {props} />
         
         </form>
           
