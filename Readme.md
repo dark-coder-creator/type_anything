@@ -1,5 +1,5 @@
-
-MERN-STACK-CRUD-APP
+TYPE ANYTHING.
+Thus is a simple mern stack app.
 
 
 This is simple backend app connected with frontend app
@@ -14,3 +14,4 @@ The Database is used as mongodb
 
 The Feature of Type Anything
 1)Like and unlike the quotes.
+2)Comments and Display in a Tab
