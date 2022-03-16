@@ -1,8 +1,10 @@
 
 import './Like.css'
 import React from 'react'
+import IconButton from '@mui/material/IconButton'
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 
-
+import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
  const Like = ({props}) => {
  
@@ -62,8 +64,15 @@ import React from 'react'
 
     <div >
       <form style={{border:"none"}}>
-          <button onClick={ onClick } className="btn1">{like} Likes</button>
-           <button onClick={() => setUnlike({id,unlike}) } className="btn2">{unlike} Unlikes </button>
+          
+           <IconButton className='likeButton'>
+           <ThumbUpOutlinedIcon className='likeIcon' onClick = { onClick} />
+           </IconButton>
+            <IconButton>
+            < ThumbDownOffAltOutlinedIcon className='unlikeIcon' onClick={() => setUnlike({id,unlike})}/>
+              </IconButton>  
+             
+        
            
       </form>
       </div>

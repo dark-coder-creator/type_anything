@@ -9,6 +9,17 @@
     cursor: pointer;
 }
 
+.likeButton {
+    color:blue;
+}
+
+.likeIcon {
+    color:blue;
+}
+
+.unlikeIcon {
+    color:red;
+}
 
 .btn2{
     margin-right: 50px;
