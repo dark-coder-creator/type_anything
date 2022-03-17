@@ -28,6 +28,7 @@ commentRouter.post('/',(req,res) => {
 
 commentRouter.get('/personalComments/:name',(req,res) =>{
  const name = req.params.name
+ const comments = []
  Anything.aggregate(
      [{
         $lookup:{
@@ -46,17 +47,21 @@ commentRouter.get('/personalComments/:name',(req,res) =>{
    if(err)
    {
      console.log(err)
-     res.status
+    
    }
    else 
    {
      console.log(result.length)
      result.map((data,index) => {
-       console.log(data.personalComments)
+     
+       for ( var i of data.personalComments)
+       {
+         comments.push(i)
+       }
        
      })
-
-     res.status(200).json(result)
+    //console.log(comments)
+     res.status(200).json(comments)
    }
  })
  
