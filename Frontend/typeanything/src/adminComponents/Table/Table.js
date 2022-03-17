@@ -84,11 +84,12 @@ useEffect(() =>{
              <StyledTableCell align="right">DESCRIPTION</StyledTableCell>
             <StyledTableCell align="right">NUMBER OF LIKES</StyledTableCell>
             <StyledTableCell align="right">NUMBER OF UNLIKES</StyledTableCell>
-       
+            <StyledTableCell align='right'>LIKE/UNLIKE RESULT</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {anythingData.map((row) => (
+            
             <StyledTableRow key={row._id}>
               <StyledTableCell component="th" scope="row">
                 {row._id}
@@ -97,7 +98,7 @@ useEffect(() =>{
               <StyledTableCell align="right">{row.description}</StyledTableCell>
               <StyledTableCell align="right">{row.like}</StyledTableCell>
               <StyledTableCell align="right">{row.unlike}</StyledTableCell>
-             
+              <StyledTableCell align="right">{row.like-row.unlike}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

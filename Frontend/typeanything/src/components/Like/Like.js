@@ -32,6 +32,7 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
               like:like+1
             })
            })
+           window.location.assign("http://localhost:3000/");
            console.log(res)
           }
           catch(e) {
@@ -64,13 +65,14 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
 
     <div >
       <form style={{border:"none"}}>
-          
-           <IconButton className='likeButton'>
+      <button onClick={ onClick } className="btn1">  <ThumbUpOutlinedIcon />Like</button> 
+      <button onClick={() => setUnlike({id,unlike})} className="btn2"><ThumbDownOffAltOutlinedIcon />Unlike</button>
+           {/* <IconButton className='likeButton'>
            <ThumbUpOutlinedIcon className='likeIcon' onClick = { onClick} />
-           </IconButton>
-            <IconButton>
+           </IconButton> */}
+            {/* <IconButton>
             < ThumbDownOffAltOutlinedIcon className='unlikeIcon' onClick={() => setUnlike({id,unlike})}/>
-              </IconButton>  
+              </IconButton>   */}
              
         
            
