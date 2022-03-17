@@ -2,10 +2,10 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var anythingSchema = require("../models/anythingSchema")
 
-var router = express.Router()
-router.use(bodyParser.json())
+var anythingRouter = express.Router()
+anythingRouter.use(bodyParser.json())
 //to create a anything post
-router.post('/',(req,res) => {
+anythingRouter.post('/',(req,res) => {
      console.log(anythingSchema)
      const { description , name , like , unlike } = req.body
 
@@ -22,7 +22,7 @@ router.post('/',(req,res) => {
 })
 
 //to display all data
-router.get('/data',(req,res) => {
+anythingRouter.get('/data',(req,res) => {
     anythingSchema.find({},function(err,result) {
         if(err)
         {
@@ -40,7 +40,7 @@ router.get('/data',(req,res) => {
  const userId = '621c6b71b49b9e19496e550c';
 
  //to like that quote
- router.post('/like/:userId',(req,res) => {
+ anythingRouter.post('/like/:userId',(req,res) => {
     const { like } = req.body  
    
     let userId = req.params.userId
@@ -57,7 +57,7 @@ router.get('/data',(req,res) => {
  })
 
  //to unlike the quote 
-router.post('/unlike/:userId',(req,res) => {
+ anythingRouter.post('/unlike/:userId',(req,res) => {
     const { unlike } = req.body;
 
     let userId = req.params.userId;
@@ -78,7 +78,7 @@ router.post('/unlike/:userId',(req,res) => {
 
 
   //to get that like using that userId
-  router.get('/like/:userId',(req,res) =>{
+  anythingRouter.get('/like/:userId',(req,res) =>{
       let userId = req.params.userId
 
       anythingSchema.findById(userId,function(err,docs) {
@@ -95,8 +95,8 @@ router.post('/unlike/:userId',(req,res) => {
 
 
 
-router.get('/hello',(req,res) => {
+  anythingRouter.get('/hello',(req,res) => {
     const username = req.body.username
     res.status(200).json('Hello '+username)
 })
-module.exports =  router 
+module.exports =  anythingRouter 

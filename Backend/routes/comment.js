@@ -4,10 +4,10 @@ var mongoose = require('mongoose')
 var Anything = require('../models/anythingSchema')
 var Comment = require('../models/commentSchema')
 
-var router = express.Router();
-router.use(bodyParser.json());
+var commentRouter = express.Router();
+commentRouter.use(bodyParser.json());
 
-router.post('/',(req,res) => {
+commentRouter.post('/',(req,res) => {
       const { name , comment , anythingId } = req.body
 
       const Comments = new Comment({ name:name,comment:comment,anythingId:anythingId })
@@ -26,7 +26,7 @@ router.post('/',(req,res) => {
 //   as: 'string'
 // }
 
-router.get('/personalComments/:name',(req,res) =>{
+commentRouter.get('/personalComments/:name',(req,res) =>{
  const name = req.params.name
  Anything.aggregate(
      [{
@@ -66,4 +66,4 @@ router.get('/personalComments/:name',(req,res) =>{
 })
 
 
-module.exports = router
+module.exports = commentRouter
