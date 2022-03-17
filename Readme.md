@@ -14,4 +14,4 @@ The Database is used as mongodb
 
 The Feature of Type Anything
 1)Like and unlike the quotes.
-2)Comments and Display in a Tab
+2)Comments and View comments in a tab with the present date.
