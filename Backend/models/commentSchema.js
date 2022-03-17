@@ -7,7 +7,9 @@ var Schema = mongoose.Schema;
 var commentSchema = Schema({
     comment:String,
     name:String,
-    anythingId:mongoose.Types.ObjectId
+    anythingId:mongoose.Types.ObjectId,
+    createdAt:{ type:Date,default:Date.now() }
+    
 })
 
 
