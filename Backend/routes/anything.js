@@ -8,17 +8,34 @@ anythingRouter.use(bodyParser.json())
 anythingRouter.post('/',(req,res) => {
      console.log(anythingSchema)
      const { description , name , like , unlike } = req.body
+         
+     if((req.body.description === "") && (req.body.name === ""))
+     {
+       res.status(400).json("Please fill all the values")
+     }
+     else if(req.body.name === "")
+     {
+         res.status(400).json("Please fill the name");
+     }
+     else if(req.body.description === "")
+      {
+          res.status(400).json("Please fill the description")
+      }
+     else 
+     {
+        const Anything = new anythingSchema({ description:description,name:name,like:like,unlike:unlike})
+        Anything.save(function(err) {
+            if(err)
+            {
+                console.log(err)
+            }
+           
+        })
+        res.status(200).json("The Result sent successfully")
+     }
+     
 
-   
-
-     const Anything = new anythingSchema({ description:description,name:name,like:like,unlike:unlike})
-     Anything.save(function(err) {
-         if(err)
-         {
-             console.log(err)
-         }
-     })
-    res.status(200).json("The Result sent successfully")
+     
 })
 
 //to display all data

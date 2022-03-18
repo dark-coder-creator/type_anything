@@ -10,6 +10,7 @@ function Content() {
    const [name,setName] = useState("");
    const [description,setDescription] = useState("")
    const [message,setMessage] = useState("")
+   const [severity,setSeverity]=useState("")
   // const [count , setCount] = useState(0);
    const [ like , setLike ] = useState(0)
    const [ unlike , setUnlike ] = useState(0)
@@ -59,10 +60,16 @@ function Content() {
            setName("")
            setDescription("")
            //setCount(0)
-           setMessage("Datas Created Successfully")
+           setMessage("Quotes Created Successfully")
+           setSeverity("success")
+           setTimeout(function() {
+            window.location.assign("http://localhost:3000/");
+           },2000)
         }
-        else {
-           setMessage("Some Error occured")
+        else if(res.status === 400){
+           
+           setMessage("Please fill both the name and description")
+           setSeverity("error")
         }
       }
       catch(err)
@@ -83,6 +90,7 @@ function Content() {
        });
       setLike(0);
       setUnlike(0);
+    
    }
 
   return (
@@ -103,8 +111,8 @@ function Content() {
               {/* <div className='message'>{message ? <p>{message}</p>:null}</div> */}
            
              <Snackbar   anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}  key={vertical + horizontal}>
-                 <Alert onClose={handleClose} severity="success" sx={{ width:'100%'}}>
-                    Quotes are entered Successfully
+                 <Alert onClose={handleClose} severity={severity} sx={{ width:'100%'}}>
+                    {message}
                  </Alert>
              </Snackbar>
          </form>
