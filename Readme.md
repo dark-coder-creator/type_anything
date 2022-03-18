@@ -3,6 +3,12 @@ Thus is a simple mern stack app.
 
 
 This is simple backend app connected with frontend app
+For running the app and the following steps:
+1-->For running the frontend part 
+cd frontend && cd typeanything
+For running the app--npm run start 
+2-->For running the backend server
+run npm start.
 
 
 
