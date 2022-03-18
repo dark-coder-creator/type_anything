@@ -10,7 +10,8 @@ For running the app--npm run start
 2-->For running the backend server
 run npm start.
 
-
+*HOME PAGE = http://localhost:3000/
+*ADMIN PAGE = http://localhost:3000/admin
 
 Frontend is used by Reactjs and Backend is by Nodejs
 Both of them are used by Javascript
