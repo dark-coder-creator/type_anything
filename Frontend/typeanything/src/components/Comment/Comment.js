@@ -43,6 +43,7 @@ const Comment = ({props}) => {
       let res = await fetch("http://localhost:3004/comment",{
         method:"POST",
         headers:{'Content-Type':'application/json'},
+        
         body:JSON.stringify({
           name:name,
           comment:comment,
@@ -72,7 +73,7 @@ const Comment = ({props}) => {
         <form style={{border:"none"}} onSubmit={handleSubmit}>
             <input type="text" name="name" value={name} placeholder='name' onChange={(e) => setName(e.target.value)} />
             <input type="text" name="comment" value={comment} placeholder='type comment...' onChange={(e) => setComment(e.target.value)} />
-            <button  onClick={ onClick }  type="submit">post a comment</button>
+            <button className="btn4" onClick={ onClick }  type="submit">post a comment</button>
            
             <ViewComments data = {props} />
         

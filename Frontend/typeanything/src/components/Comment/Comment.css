@@ -7,3 +7,13 @@
     border:none;
     cursor: pointer;
 }
+
+.btn4 {
+    color:white;
+    background-color: rgb(24, 10, 105);
+    border-radius:12px;
+    font-size:16px;
+    font-weight: bold;
+    border:none;
+    cursor: pointer;
+}
