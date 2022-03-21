@@ -70,7 +70,7 @@ const ViewComments = ({data}) => {
           
 
 
-          <button onClick={ onClick }>View Comments</button>
+          <button className="viewButton" onClick={ onClick }>View Comments</button>
           <Modal 
            aria-labelledby="transition-modal-title"
            aria-describedby="transition-modal-description"
