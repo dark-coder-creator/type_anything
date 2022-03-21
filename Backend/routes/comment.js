@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
+
 var Anything = require('../models/anythingSchema')
 var Comment = require('../models/commentSchema')
 
@@ -9,8 +10,12 @@ commentRouter.use(bodyParser.json());
 
 commentRouter.post('/',(req,res) => {
       const { name , comment , anythingId , createdAt } = req.body
-
-      const Comments = new Comment({ name:name,comment:comment,anythingId:anythingId,createdAt })
+      console.log("anything id")
+      console.log(anythingId)
+      var id =new mongoose.Types.ObjectId(anythingId)
+      console.log("id")
+      console.log(id)
+      const Comments = new Comment({ name:name,comment:comment,anythingId:id,createdAt })
       Comments.save(function(err) {
           if(err)
           {
@@ -28,6 +33,7 @@ commentRouter.post('/',(req,res) => {
 
 commentRouter.get('/personalComments/:name',(req,res) =>{
  const name = req.params.name
+ 
  const comments = []
  Anything.aggregate(
      [{
@@ -52,8 +58,9 @@ commentRouter.get('/personalComments/:name',(req,res) =>{
    else 
    {
      console.log(result.length)
+    
      result.map((data,index) => {
-     
+       console.log(data.personalComments)
        for ( var i of data.personalComments)
        {
          comments.push(i)
