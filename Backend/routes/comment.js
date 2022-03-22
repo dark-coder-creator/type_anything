@@ -1,7 +1,8 @@
 var express = require('express')
 var bodyParser = require('body-parser')
+const assert = require('assert/strict')
 var mongoose = require('mongoose')
-
+var ObjectID = require('mongodb').ObjectId
 var Anything = require('../models/anythingSchema')
 var Comment = require('../models/commentSchema')
 
@@ -10,12 +11,14 @@ commentRouter.use(bodyParser.json());
 
 commentRouter.post('/',(req,res) => {
       const { name , comment , anythingId , createdAt } = req.body
-      console.log("anything id")
-      console.log(anythingId)
-      var id =new mongoose.Types.ObjectId(anythingId)
-      console.log("id")
-      console.log(id)
-      const Comments = new Comment({ name:name,comment:comment,anythingId:id,createdAt })
+    
+   
+     // var id =new mongoose.Types.ObjectId(anythingId)
+      var objectId = new ObjectID(anythingId)
+      var objectId2 = new ObjectID()
+      console.log("Assert")
+      console.log(objectId.toHexString())
+      const Comments = new Comment({ name:name,comment:comment,anythingId:objectId,createdAt })
       Comments.save(function(err) {
           if(err)
           {
