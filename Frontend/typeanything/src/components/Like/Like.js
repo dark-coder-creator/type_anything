@@ -1,24 +1,37 @@
 
 import './Like.css'
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import IconButton from '@mui/material/IconButton'
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 
 import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutlined';
 
+import  Snackbar  from '@mui/material/Snackbar';
+import  Alert  from '@mui/material/Alert';
  const Like = ({props}) => {
- 
+  
+
+
+
+
+
   const id = props._id
   const like = props.like
   const unlike = props.unlike
+  const name = props.name
     function onClick() {
-      setId({id,like});
       
+     
+
+        setId({id,like});
+        alert(`You have liked ${name}'s post`)
+     
     } 
 
        const setId = async({id,like}) => {
           console.log(id)
-         
+        
           
           try {
            
@@ -32,8 +45,14 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
               like:like+1
             })
            })
-           window.location.assign("http://localhost:3000/");
+           
            console.log(res)
+           if(res.status === 200)
+           {
+
+            
+          
+           }
           }
           catch(e) {
             console.log(e)
@@ -51,6 +70,8 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
               })
             })
             console.log(res)
+
+             alert(`You have unliked ${name}'s post`)
          }
          catch(e)
          {
@@ -66,14 +87,17 @@ import ThumbDownOffAltOutlinedIcon from '@mui/icons-material/ThumbDownOffAltOutl
     <div >
       <form style={{border:"none"}}>
       <button onClick={ onClick } className="btn1">  <ThumbUpOutlinedIcon />Like</button> 
-      <button onClick={() => setUnlike({id,unlike})} className="btn2"><ThumbDownOffAltOutlinedIcon />Unlike</button>
+      <button onClick={() =>   
+        setUnlike({id,unlike})} className="btn2"><ThumbDownOffAltOutlinedIcon />Unlike</button>
            {/* <IconButton className='likeButton'>
            <ThumbUpOutlinedIcon className='likeIcon' onClick = { onClick} />
            </IconButton> */}
             {/* <IconButton>
             < ThumbDownOffAltOutlinedIcon className='unlikeIcon' onClick={() => setUnlike({id,unlike})}/>
               </IconButton>   */}
-             
+   
+  
+       
         
            
       </form>

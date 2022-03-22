@@ -68,7 +68,7 @@ anythingRouter.get('/data',(req,res) => {
             console.log(err)
         }
         else {
-            res.status(200).json(docs)
+            res.status(200).json("The Quote is liked successfully")
         }
      })
  })
