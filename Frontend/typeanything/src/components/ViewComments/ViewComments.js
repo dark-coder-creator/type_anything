@@ -10,11 +10,12 @@ const style = {
   
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
+  bgcolor: 'wheat',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
-  borderRadius:10
+  borderRadius:5,
+  overflow:"auto"
 };
 
 
@@ -80,12 +81,12 @@ const ViewComments = ({data}) => {
            className="modalClass"
          >
             <Box sx={style}>
-            <h2>Comments</h2>
+            <h3 className='commentHeader'>C o m m e n t s 💬</h3>
             {personalComments.map((comment,index) => (
               <div key={index}>
                 
-                    <h6>{comment.name} </h6>
-                     <h4>{comment.comment}</h4>
+                    <h5 className="commentName">{comment.name}</h5>
+                     <h4 className='commentContent'>{comment.comment}</h4>
               </div>
              
             ))}

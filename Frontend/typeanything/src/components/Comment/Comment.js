@@ -14,7 +14,7 @@ const style = {
   
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'background.paper',
+  bgcolor: 'brown',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -71,7 +71,7 @@ const Comment = ({props}) => {
         <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
         <Box sx={style}>
         <form style={{border:"none"}} onSubmit={handleSubmit}>
-            <input type="text" name="name" value={name} placeholder='name' onChange={(e) => setName(e.target.value)} />
+            <input type="text" name="name" value={name} placeholder='name...' onChange={(e) => setName(e.target.value)} />
             <input type="text" name="comment" value={comment} placeholder='type comment...' onChange={(e) => setComment(e.target.value)} />
             <button className="btn4" onClick={ onClick }  type="submit">post a comment</button>
            

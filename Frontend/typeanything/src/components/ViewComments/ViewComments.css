@@ -13,3 +13,26 @@
         cursor: pointer;
  
 }
+
+.commentHeader {
+    color:white;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.commentContent {
+    color: black;
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 7px;
+}
+
+.commentName {
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 4px;
+}
