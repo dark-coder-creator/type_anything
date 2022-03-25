@@ -12,8 +12,19 @@ commentRouter.use(bodyParser.json());
 commentRouter.post('/',(req,res) => {
       const { name , comment , anythingId , createdAt } = req.body
     
-   
-     // var id =new mongoose.Types.ObjectId(anythingId)
+     if((req.body.name === "")&&(req.body.comment === ""))
+     {
+       res.status(400).json("Please fill the name and comment together")
+     }
+     else if(req.body.name === "")
+     {
+       res.status(400).json("Please fill the name")
+     }
+     else if(req.body.comment === "")
+     {
+       res.status(400).json("Please fill the comment")
+     }
+     else {
       var objectId = new ObjectID(anythingId)
       var objectId2 = new ObjectID()
       console.log("Assert")
@@ -26,6 +37,20 @@ commentRouter.post('/',(req,res) => {
           }
       })
       res.status(200).json("The Comments are entered successfully");
+     }
+     // var id =new mongoose.Types.ObjectId(anythingId)
+      // var objectId = new ObjectID(anythingId)
+      // var objectId2 = new ObjectID()
+      // console.log("Assert")
+      // console.log(objectId.toHexString())
+      // const Comments = new Comment({ name:name,comment:comment,anythingId:objectId,createdAt })
+      // Comments.save(function(err) {
+      //     if(err)
+      //     {
+      //       console.log(err)
+      //     }
+      // })
+      // res.status(200).json("The Comments are entered successfully");
 })
 // {
 //   from: 'comments',
