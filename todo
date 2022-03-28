@@ -1,5 +1,6 @@
 To create empty bug for inputs in typing comments(BSONTypeError: Argument passed in must be a string of 12 bytes or a string of 24 hex characters) (Backend)
-To create success and failure alerts for comments(Frontend)
+(The error is appearing in some cases)
+To create success and failure alerts for comments(Frontend)(done)
 To create Authentication part using json web tokens(Whole App)
 To create hover feature in css for buttons(Frontend)
 To add emojis selection option(Frontend)
