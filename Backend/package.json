@@ -1,7 +1,8 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Backend Part of Type Anything",
+  "git repository":"https://github.com/saravanan-coder/type_anything/tree/master/Backend",
   "main": "index.js",
   "scripts": {
     
