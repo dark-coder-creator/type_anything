@@ -17,3 +17,21 @@
     border:none;
     cursor: pointer;
 }
+
+.descriptionCharacters 
+{
+    color: green;
+    margin-left: 2px;
+    font-weight: bold;
+}
+
+.anythingCharacters {
+    color: black;
+   margin-left: 2px;
+}
+
+.quoteBox {
+    background-color: white;
+    border-radius: 9px;
+   
+}
