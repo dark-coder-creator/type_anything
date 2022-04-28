@@ -7,6 +7,13 @@
     border:none;
     cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }
+.form {
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
+}
+.Box 
+{
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
+}
 
 .btn4 {
     color:white;
@@ -23,15 +30,17 @@
     color: green;
     margin-left: 2px;
     font-weight: bold;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }
 
 .anythingCharacters {
     color: black;
    margin-left: 2px;
+   cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }
 
 .quoteBox {
     background-color: white;
     border-radius: 5px;
-   
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }

@@ -16,7 +16,7 @@ const style = {
   
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'brown',
+  bgcolor: 'lightpink',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
@@ -103,7 +103,7 @@ const Comment = ({props}) => {
 
         <button className="btn3" onClick={handleOpen}>Type Any Comment...</button>
         <Modal open={modalOpen} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-        <Box sx={style}>
+        <Box sx={style} className="Box">
          <div className="quoteBox">
          <h4 className='descriptionCharacters'> "{description}"</h4>
           <h5 className="anythingCharacters"> -{anythingName}</h5>

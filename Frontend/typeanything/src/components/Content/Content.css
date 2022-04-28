@@ -3,6 +3,14 @@
     padding:10px;
 }
 
+.snackBar {
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
+}
+
+.alert{
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
+}
+
 input[type=text] {
     padding:10px;
     border:0;
@@ -19,6 +27,7 @@ form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:2rem;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }
 
 .message {

@@ -110,8 +110,8 @@ function Content() {
 
               {/* <div className='message'>{message ? <p>{message}</p>:null}</div> */}
            
-             <Snackbar   anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}  key={vertical + horizontal}>
-                 <Alert onClose={handleClose} severity={severity} sx={{ width:'100%'}}>
+             <Snackbar className='snackBar'  anchorOrigin={{ vertical, horizontal }} open={open} autoHideDuration={6000} onClose={handleClose}  key={vertical + horizontal}>
+                 <Alert className='alert' onClose={handleClose} severity={severity} sx={{ width:'100%'}}>
                     {message}
                  </Alert>
              </Snackbar>

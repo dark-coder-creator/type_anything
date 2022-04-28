@@ -1,5 +1,6 @@
 .modalClass {
     overflow: auto;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
 }
 
 .viewButton {
@@ -10,7 +11,7 @@
         font-size:16px;
         font-weight: bold;
         border:none;
-        cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
+        cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
  
 }
 
@@ -19,6 +20,7 @@
     font-size: 25px;
     font-weight: bold;
     font-family: "Lucida Console", "Courier New", monospace;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
 }
 
 .commentContent {
@@ -30,9 +32,11 @@
     font-size: 16px;
     letter-spacing: 2px;
     border-radius: 7px;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
 }
 
 .commentName {
     font-family: "Times New Roman", Times, serif;
     letter-spacing: 4px;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;
 }
