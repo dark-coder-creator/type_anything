@@ -6,7 +6,7 @@
     font-size: 16px;
     font-weight: bold;
     border:none;
-    cursor: pointer;
+    cursor: url("https://i.stack.imgur.com/KDrS2.png"), auto;;
 }
 
 .likeButton {
@@ -29,7 +29,7 @@
     font-size: 16px;
     font-weight: bold;
     border:none;
-    cursor: pointer;
+    cursor:url("https://i.stack.imgur.com/KDrS2.png"), auto;
 }
 
 .btn3 {
