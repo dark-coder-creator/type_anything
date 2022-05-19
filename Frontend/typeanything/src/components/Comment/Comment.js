@@ -102,7 +102,7 @@ const Comment = ({props}) => {
         
 
         <button className="btn3" onClick={handleOpen}>Type Any Comment...</button>
-        <Modal open={modalOpen} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
+        <Modal open={modalOpen} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" className='modalClass'>
         <Box sx={style} className="Box">
          <div className="quoteBox">
          <h4 className='descriptionCharacters'> "{description}"</h4>
